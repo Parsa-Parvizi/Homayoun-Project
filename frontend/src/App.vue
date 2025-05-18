@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import './assets/styles/fonts.css'
+
 export default {
   name: 'App'
 }
@@ -18,5 +20,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  direction: rtl;
 }
 </style>

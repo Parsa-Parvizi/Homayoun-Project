@@ -53,7 +53,8 @@ export default {
         formData.append('username', this.username)
         formData.append('password', this.password)
         
-        const response = await axios.post('/myapp/admin/login/', formData)
+        const response = await axios.post(`${window.location.origin}/myapp/admin/login/`, formData)
+
         
         if (response.data.success) {
           // ذخیره توکن و وضعیت ادمین

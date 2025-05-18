@@ -1,10 +1,10 @@
 from django.urls import path
 from .views import *
 from invoice.views import *
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
-    # Following paths are related to APIs:
-
     path("api/checkLicenseNumber", check_license_number),
     path("api/addTruck", add_truck),
     path("api/getMaterialTypes", get_materialTypes),
@@ -49,11 +49,11 @@ urlpatterns = [
     path("api/reportProducts", report_Products),
     path("api/reportConsumption", report_Consumption),
     path("api/reportAlert", report_Alert),
-
-    path("api/havaleh-pdf/", havaleh, name='havaleh-pdf'),
-
-    # Following paths are related to Pages:
-
+    
+    path("api/products/list", get_products_list, name='get_products_list'),
+    path("api/profiles/list", get_consumption_profile_names, name='get_consumption_profile_names'),
+    path("api/customers/list", get_customers_list, name='get_customers_list'),
+    
     path("", all_pages),
     path("addCustomer/", add_customer),
     path("addSupplier/", add_supplier),
@@ -73,16 +73,10 @@ urlpatterns = [
     path("forkliftPanel/", forklift_panel),
     path("ProductsPage/", products_page),
 
+    # path('api/sales/create-test/', views.create_test_sales, name='create_test_sales'),
+
     path("cancel/", admin_login2, name='cancel'),
     path("admin/cancel/", cancel, name='cancel_action'),
-
     path("admin/report/", report_page, name='report_page'),
     path("admin/login/", admin_login2, name='admin_login'),
-    
-    path("invoice/", invoice_page),
-    path("invoice/SalesOrder/", SalesOrder),
-    path("invoice/Purchases/", Purchases),
-    path("invoice/havaleh", havaleh),
-
 ]
-

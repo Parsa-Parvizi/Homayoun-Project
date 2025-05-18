@@ -197,6 +197,11 @@ class Customer(models.Model):
     address = models.TextField(blank=True)
     phone = models.CharField(max_length=20, blank=True)
     comments = models.TextField(blank=True)
+    
+    economic_code = models.CharField("کد اقتصادی خریدار", max_length=15, blank=True, null=True) #new by darbandi
+    postcode = models.CharField("کد پستی خریدار", max_length=10, blank=True, null=True) #new by darbandi
+    national_id = models.CharField("شناسه ملی خریدار", max_length=50, blank=True, null=True) #new by darbandi
+
     username = models.CharField(max_length=255, null=False, blank=True)
     logs = models.TextField(blank=True)
 

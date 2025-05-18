@@ -23,6 +23,7 @@ import Products from "@/components/admin/Products.vue";
 import AdminLogin from '../components/admin/AdminLogin.vue'
 import ReportLogin from '../components/admin/ReportLogin.vue'
 import Havaleh from '@/components/Havaleh.vue'
+import salesorder from '@/components/salesorder.vue';
 
 const routes = [
   {
@@ -130,11 +131,11 @@ const routes = [
     component: Cancel,
     meta: { requiresAuth: true }
   },
-  {
-    path: '/myapp/admin/login/',
-    name: 'AdminLogin',
-    component: AdminLogin
-  },
+  // {
+  //   path: '/myapp/admin/login/',
+  //   name: 'AdminLogin',
+  //   component: AdminLogin
+  // },
   {
     path: '/myapp/report/',
     name: 'Report',
@@ -162,18 +163,13 @@ const routes = [
     component: () => import('@/components/invoice.vue')
   },
   {
-    path: '/myapp/invoice/SalesOrder/',
+    path: '/myapp/invoice/sales_order/',
     component: () => import('@/components/salesorder.vue')
   },
   {
-    path: '/myapp/invoice/Purchases/',
-    component: () => import('@/components/purchaseorder.vue')
+    path: '/myapp/invoice/havaleh',
+    component: () => import('@/components/Havaleh.vue'),
   },
-  {
-    path: '/myapp/invoice/havaleh/',
-    name: 'havaleh',
-    component: Havaleh
-  }
 ]
 
 const router = createRouter({
